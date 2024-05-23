@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
+    <!-- reset -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- fonts -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <title>르베라쥬</title>
+    <style>
+        :root{
+            font-family:'Noto Sans KR','Roboto',sans-serif;
+            font-weight:500;
+            font-size:20px;
+            color:#000;
+            line-height:1.2;
+            word-break:keep-all;
+            --color01: #2c5937;
+            --color02: #8c6354;
+        }
+
+        .header-container{
+            position: relative;
+            width: auto;
+            display: flex;
+            padding: 20px;
+            align-items: center;
+        }
+        .logo{
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 150px;
+            align-content: center;
+        }
+        .logo img{
+            transition: 0.3s;
+        }
+        .header .flag{
+            position: absolute;
+            right: 20px;
+            display: flex;
+        }
+        .flag img{
+            padding-left: 20px;
+        }
+        .nav-btn, .nav-close{
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            align-content: center;
+            align-self: center;
+        }
+        .nav{
+            display: none;
+            width: 490px;
+            height: 894px;
+            position: relative;
+            left: -50px;
+            background: #fff;
+        }
+        .nav .main-nav{
+            text-align: center;
+        }
+        .nav li{
+            padding: 34px;
+        }
+        .nav a{
+            font-size: 30px;
+            color: var(--color01);
+        }
+        .nav a:hover{
+            color: var(--color02);
+        }
+        .nav .serve-nav{
+            display: none;
+        } 
+        h2{
+            font-size: 60px;
+            font-weight: 700;
+            color: var(--color01);
+            text-align: center;
+            padding: 40px;
+        }
+
+        .swiper1{
+            overflow: hidden;
+        }
+
+        .new-product p:last-child{
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--color01);
+        }
+        .new-product p:last-child:hover{
+            color: var(--color02);
+        }
+        .new-product .new-container{
+            margin: 40px;
+            padding: 40px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .new-container .img-box{
+            width: 300px;
+        }
+        .new-container .img-box img:hover{
+            opacity: 50%;
+            transition: 0.3s;
+        }
+        .new-container .img-box p{
+            text-align: center;
+            padding: 10px;
+        }
+        .new-container .img-box p:nth-last-child(1){
+            color: var(--color02);
+        }
+
+        .banner{
+            padding: 40px;
+            background: var(--color01);
+        }
+        .banner-container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            justify-items: center;
+            padding: 40px;
+        }
+        .banner-container .img-box img{
+            width: 100%;
+            filter: drop-shadow(10px 6px 6px black);
+        }
+        .text-box p{
+            font-size: 55px;
+            font-weight: 600;
+            text-align: center;
+            color: #fff;
+        }
+        .text-box p>strong{
+            font-size: 150px;
+        }
+
+        .swiper2{
+            overflow: hidden;
+        }
+        .swiper2 p:last-child{
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--color01);
+        }
+        .swiper2 p:last-child:hover{
+            color: var(--color02);
+        }
+        .swiper-wrapper2{
+            display: flex;
+            flex-wrap: nowrap;
+            text-align: center;
+            justify-items: center;
+            margin: 30px 0 30px 0;
+        }
+        .best-swiper-slide img{
+            width: 500px;
+        }
+        .best-swiper-slide img:hover{
+            opacity: 50%;
+            transition: 0.3s;
+        }
+        .best-swiper-slide p{
+            text-align: center;
+            padding: 10px;
+        }
+        .best-swiper-slide p:nth-last-child(1){
+            color: var(--color02);
+        }
+
+        .footer{
+            background: var(--color01);
+        }
+        .footer-container{
+            padding: 40px;
+            text-align: -webkit-center;
+        }
+        .bottom-logo{
+            width: 500px;
+        }
+        .bottom-logo img{
+            padding-bottom: 40px;
+        }
+        .sns{
+            display: flex;
+            justify-content: center;
+            padding-bottom: 40px;
+        }
+        .sns img{
+            width: 70px;
+            margin: 0 20px 0 20px;
+        }
+        .footer address{
+            font-size: 15px;
+            color: #fff;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="nav-btn"><img src="./images/btn-nav.svg" alt="네비 버튼"></div>
+            <div class="logo" title="홈으로 이동"><a href="./index.html"><img src="./images/르베라쥬 로고.svg" alt="logo"></a></div>
+            <div class="flag">
+                <a href="#"><img src="./images/ico_kr.png" alt="kr"></a>
+                <a href="#"><img src="./images/ico_us.png" alt="us"></a>
+                <a href="#"><img src="./images/ico_russia.png" alt="russia"></a>
+            </div>
+            <div class="nav">
+                <div class="nav-close"><img src="./images/X-icon.svg" alt="네비 닫기 버튼"></div>
+                <ul class="main-nav">
+                    <li>
+                        <a href="#">SKIN CARE</a>
+                        <ul class="serve-nav">
+                            <li>토너</li>
+                            <li>에멀전</li>
+                            <li>크림</li>
+                            <li>에센스</li>
+                            <li>앰플</li>
+                            <li>겔</li>
+                            <li>마스크팩</li>
+                            <li>세트</li>
+                            <li>선케어</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">MAKE UP</a>
+                        <ul class="serve-nav">
+                            <li>립</li>
+                            <li>아이</li>
+                            <li>아이브로우</li>
+                            <li>페이스</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">CLEANSING</a>
+                        <ul class="serve-nav">
+                            <li>클렌징폼</li>
+                            <li>필링젤</li>
+                            <li>마사지크림</li>
+                            <li>클렌징크림</li>
+                            <li>클렌징워터</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">PERFUME</a>
+                    </li>
+                    <li>
+                        <a href="#">BODY</a>
+                        <ul class="serve-nav">
+                            <li>헤어</li>
+                            <li>바디클렌저</li>
+                            <li>핸드/풋케어</li>
+                            <li>바디로션</li>
+                            <li>바디미스트</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">ETC</a>
+                    </li>
+                    <li>
+                        <a href="#">+NEW PRODUCT+</a>
+                    </li>
+                    <li>
+                        <a href="#">+CPNP+</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="swiper swiper1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="#"><img src="./images/slide.jpg" alt="슬라이드01"></a></div>
+            <div class="swiper-slide"><a href="#"><img src="./images/slide02.jpg" alt="슬라이드02"></a></div>
+            <div class="swiper-slide"><a href="#"><img src="./images/slide03.jpg" alt="슬라이드03"></a></div>
+        </div>
+    </div>
+    <div class="new-product">
+        <h2>New</h2>
+        <div class="new-container">
+            <div class="img-box">
+                <a href="#"><img src="./images/글루타치온.png" alt="글루타치온"></a>
+                <p>르베라쥬 트룰리 글루타치온 세럼</p>
+                <p>99,000원</p>
+            </div>
+            <div class="img-box">
+                <a href="#"><img src="./images/레티놀.png" alt="레티놀"></a>
+                <p>르베라쥬 트룰리 레티놀 세럼</p>
+                <p>89,000원</p>
+            </div>
+            <div class="img-box">
+                <a href="#"><img src="./images/센텔라.png" alt="센텔라"></a>
+                <p>르베라쥬 트룰리 센텔라 세럼</p>
+                <p>99,000원</p>
+            </div>
+        </div>
+        <a href="#"><p>VIEW MORE ▶</p></a>
+    </div>
+    <div class="banner">
+        <div class="banner-container">
+            <div class="img-box"><img src="./images/banner.jpg" alt="banner"></div>
+            <div class="text-box">
+                <p>
+                    Be more beautiful with<br><br><br>
+                    <strong>LEBELAGE</strong><br><br><br>
+                    and your own beauty<br><br><br>
+                    르베라쥬와 당신만의 아름다움으로 더 아름다워져라
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="swiper swiper2">
+        <h2>Best</h2>
+        <div class="swiper-wrapper swiper-wrapper2">
+            <div class="swiper-slide best-swiper-slide">
+                <a href="#"><img src="./images/best01.png" alt="후르츠 토마토 에센스 마스크 25ml"></a>
+                <p>후르츠 토마토 에센스 마스크 25ml</p>
+                <p>1,000원</p>
+            </div>
+            <div class="swiper-slide best-swiper-slide">
+                <a href="#"><img src="./images/best02.png" alt="후르츠 코코넛 에센스 마스크 25ml"></a>
+                <p>후르츠 코코넛 에센스 마스크 25ml</p>
+                <p>1,000원</p>
+            </div>
+            <div class="swiper-slide best-swiper-slide">
+                <a href="#"><img src="./images/best03.png" alt="후르츠 자몽 에센스 마스크 25ml"></a>
+                <p>후르츠 자몽 에센스 마스크 25ml</p>
+                <p>1,000원</p>
+            </div>
+            <div class="swiper-slide best-swiper-slide">
+                <a href="#"><img src="./images/best04.png" alt="닥터 캡슐 비타민 & 센텔라 2X 마스크팩 10개입"></a>
+                <p>닥터 캡슐 비타민 & 센텔라 2X 마스크팩 10개입</p>
+                <p>40,000원</p>
+            </div>
+            <div class="swiper-slide best-swiper-slide">
+                <a href="#"><img src="./images/best05.png" alt="닥터 캡슐 시카 & 아쿠아 2X 마스크팩 10개입"></a>
+                <p>닥터 캡슐 시카 & 아쿠아 2X 마스크팩 10개입</p>
+                <p>40,000원</p>
+            </div>
+            <div class="swiper-slide best-swiper-slide">
+                <a href="#"><img src="./images/best06.png" alt="닥터 캡슐 콜라겐 & 히알루로닉 2X 마스크팩 10개입"></a>
+                <p>닥터 캡슐 콜라겐 & 히알루로닉 2X 마스크팩 10개입</p>
+                <p>40,000원</p>
+            </div>
+            <div class="swiper-slide best-swiper-slide">
+                <a href="#"><img src="./images/best07.png" alt="프레쉬 그린티 포 맨 2종 세트"></a>
+                <p>프레쉬 그린티 포 맨 2종 세트</p>
+                <p>18,000원</p>
+            </div>
+            <div class="swiper-slide best-swiper-slide">
+                <a href="#"><img src="./images/best08.jpg" alt="희율 명품 골드 에센스"></a>
+                <p>희율 명품 골드 에센스</p>
+                <p>35,000원</p>
+            </div>
+            <div class="swiper-slide best-swiper-slide">
+                <a href="#"><img src="./images/best09.png" alt="펩타이드 더마 클렌징 워터"></a>
+                <p>펩타이드 더마 클렌징 워터</p>
+                <p>25,000원</p>
+            </div>
+            <div class="swiper-slide best-swiper-slide">
+                <a href="#"><img src="./images/best10.png" alt="콜라겐 더마 클렌징 워터"></a>
+                <p>콜라겐 더마 클렌징 워터</p>
+                <p>25,000원</p>
+            </div>
+            <div class="swiper-slide best-swiper-slide">
+                <a href="#"><img src="./images/best11.png" alt="시카 더마 클렌징 워터"></a>
+                <p>시카 더마 클렌징 워터</p>
+                <p>25,000원</p>
+            </div>
+            <div class="swiper-slide best-swiper-slide">
+                <a href="#"><img src="./images/best12.png" alt="비타민 더마 클렌징 워터"></a>
+                <p>비타민 더마 클렌징 워터</p>
+                <p>25,000원</p>
+            </div>
+        </div>
+        <a href="#"><p>VIEW MORE ▶</p></a>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="bottom-logo"><img src="./images/bottom_logo.svg" alt="푸터 로고"></div>
+            <div class="sns">
+                <div class="insta"><a href="https://www.instagram.com/lebelage_korea?igsh=Z3lpYmMxc3AwaHd0"><img src="./images/인스타 white.svg" alt="인스타그램"></a></div>
+                <div class="face"><a href="https://www.facebook.com/share/DNCUx3x59amoK4ov/?mibextid=LQQJ4d"><img src="./images/페이스북 white.svg" alt="페이스북"></a></div>
+            </div>
+            <address>
+                COMPANY : 제이비홀딩스   I   OWNER : 이종배   I   사업자등록번호 : 763-76-00159 [사업자번호조회]   I   통신판매업신고번호 : 2018-인천서구-1633<br><br>
+                ADDRESS : 인천광역시 서구 북항로206번길 20 (원창동392-17)   I   CS CENTER : 02-542-3597   I   FAX : 02-542-3647<br><br>
+                CS CENTER : 02.542.3597<br>MON -FRI AM 10:00 - PM 17:00<br>LUNCH PM 11:30 - 01:00 SAT, SUN, HOLIDAY OFF<br><br>
+                BANK INFO : 기업은행 993-002530-01-018<br>예금주 : 제이비홀딩스<br><br>
+                RETURN / EXCHANGE : 반품주소 : 서울시 강서구 화곡8동 887-11 1층 동동구리무<br>교환 및 반품시, 미리 고객센터에 접수후 보내주세요.<br><br>
+                개인정보관리자 : (ddcos3292@naver.com)<br><br>
+                Copyright by lebelage.co.kr. All rights reserved. designed by morenvy.com
+            </address>
+        </div>
+    </footer>
+
+    <!-- jquery -->
+    <script src="./js/jquery.min.js"></script>
+
+    <!-- swiper -->
+    <script src="./js/swiper-bundle.min.js"></script>
+
+    <script>
+
+        // 메인 스와이퍼
+        const mainSwiper = new Swiper('.swiper1', {
+            slidesPerView: 1,
+            speed: 700,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+            },
+        });
+
+        // 서브 스와이퍼
+        const bestSwiper = new Swiper('.swiper2', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            slidesPerGroup : 3,
+            loop: true,
+            grid: {
+                fill: 3,
+                rows: 2,
+            },
+            autoplay: {
+                delay: 4000,
+            },
+        });
+
+        // 네비 open
+        $('.nav-btn img').click(function(){
+            $('.nav-btn img').hide();
+            // $('.nav').addClass('active');
+            // $('.nav').fadeIn(300);
+            $('.nav').slideDown(300);
+            // $('.nav').show(300);
+        })
+        
+        // 네비 close
+         $('.nav-close img').click(function(){
+            $('.nav-btn img').show();
+            // $('.nav').removeClass('active');
+            // $('.nav').fadeOut(300);
+            $('.nav').slideUp(300);
+            // $('.nav').hide(300);
+        })
+    
+    </script>
+</body>
+</html>
